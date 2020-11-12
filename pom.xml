@@ -12,6 +12,8 @@
 	<artifactId>devops-exam</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>devops-exam</name>
+
+
 	<description>Devops application</description>
 
 	<properties>

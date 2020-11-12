@@ -1,4 +1,16 @@
 language: java
 
+services:
+  - docker
+
+
+script:
+  - bash docker_push
+
+env:
+  global:
+  secure: EMEGDhmmKoAKBmERSG68P2BGkB17edtFDGuDSE9tqNJMKt5MaSf0P2oXuk7zzNuVjvwCl5hJELnm539O/gC3m8A25hm3rDFOO05ab7b+RWKVjpkXPeTnUkKKHt8drFoHmFDbstDZjOHSGm+PUbXGSvX4qsn+rfjmDrT/GFGP+0ICNLG8ReMGsm+ZCI5BXi7vWVUKHeuhGVrSqsGofx4w9YcH96nro9dQvVfl3ZZb66enFHW7rTEje2bL7GgqLVMCCtm7o/N1kWHz87w9YCX36bQRGW8yi1YtFZNZzQ928C/xWKCJQvAzLU1H92C6tclA4aIWiBzOou+p38JdvnYuMVEtnSsS9rsJdRsjMn/G3r6Oibi8xnHKhNdQNzjrsp+lJyQd0PTDFTPGa8Gech2NvNonJwNrwJlrahvb3Q//wc0gD3CVh0hzGMv9lKyiyHALVlnjpTQY+vnarczF/HxkLlBQ/oBxS2XXDCnJCGC/XWNGGuJ1MGLniopQ2g2UTnn8bo8nsxIIPeTU6dSOe83w/rLy1Uh0B+MrWLNisbjM2QHBlbY7vl0wL7lFvmVhUZougS55SnquDXf3BOBpkMU/jHrW6ByvHL2/CgXU7vIh6H7njtQW5J6T8keCTiauQVVG7wk2eNYBz4u8nogjWyOAX826o1YPf/aoSW9CABoaEJM=
+
+
 before_install:
   - chmod +x mvnw
