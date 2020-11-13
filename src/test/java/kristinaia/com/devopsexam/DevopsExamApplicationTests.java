@@ -8,6 +8,7 @@ class DevopsExamApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
