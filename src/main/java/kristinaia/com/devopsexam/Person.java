@@ -6,6 +6,8 @@ import javax.persistence.Id;
 
 //Kom igjen travis
 
+//la oss sjekke på nytt
+
 @Entity
 public class Person {
 
