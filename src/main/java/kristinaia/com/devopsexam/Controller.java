@@ -33,6 +33,8 @@ public class Controller {
         return "WELCOME TO THE HOMEPAGE";
     }
 
+
+
     @GetMapping(path = "/home")
     public String homepage() {
        LOG.info("This is the homepage not the other one");
