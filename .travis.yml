@@ -2,7 +2,7 @@
 env:
   global:
     - GCP_PROJECT_ID=devops-gcp-project-296222
-    - IMAGE=gcr.io/devops-gcp-project-296222/devops-exam
+    - IMAGE=gcr.io/devops-gcp-project-296222/devops-gcp-project
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
     - CLOUD_RUN_SERVICE=devops-gcp-project-296222
     - CLOUD_RUN_REGION=us-central1
