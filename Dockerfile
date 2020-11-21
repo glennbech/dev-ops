@@ -7,3 +7,5 @@ RUN mvn package -DskipTests
 FROM adoptopenjdk/openjdk11:alpine-slim
 COPY --from=builder /app/target/devops-exam-*.jar /devops-exam-0.01-SNAPSHOT.jar
 ENTRYPOINT ["java", "-jar", "/devops-exam-0.01-SNAPSHOT.jar"]
+
+
