@@ -1,21 +1,23 @@
 package kristinaia.com.devopsexam;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-//Kom igjen travis
-
-//la oss sjekke på nytt
 
 @Entity
+@Table(name ="person")
 public class Person {
 
     @Id
     @GeneratedValue
     private int id;
+
+    @Column(name ="name", nullable = false)
     private String name;
+
+    @Column(name = "age", nullable = false)
     private int age;
+
+    @Column(name = "email", nullable = false)
     private String email;
 
     public Person() {
@@ -57,5 +59,15 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

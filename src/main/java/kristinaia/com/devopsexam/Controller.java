@@ -1,9 +1,6 @@
 package kristinaia.com.devopsexam;
 
 import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.instrument.Metrics;
-import io.micrometer.core.annotation.Timed;
-import io.micrometer.core.instrument.MeterRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.ArrayList;
 import java.util.List;
-//import java.util.logging.Logger;
+
 
 
 @RestController
@@ -20,6 +18,9 @@ public class Controller {
 
 
     private MeterRegistry meterRegistry;
+
+    @Autowired
+    private PersonRepo personRepo;
 
    private static final Logger LOG = LoggerFactory.getLogger(Controller.class.getName());
 
@@ -29,8 +30,7 @@ public class Controller {
 
     @GetMapping(path = "/")
     public String home() {
-        LOG.info("Testing logger");
-        return "WELCOME TO THE HOMEPAGE";
+        return "not the HOMEPAGE";
     }
 
 
@@ -38,17 +38,26 @@ public class Controller {
     @GetMapping(path = "/home")
     public String homepage() {
        LOG.info("This is the homepage not the other one");
-        return "Welcome again to the official homepage";
+        return "HOMEPAGE";
     }
 
-    @GetMapping(path = "/second")
-    public String next() {
-        return "Here you have nothing.......";
+    @GetMapping(path = "/person")
+    public Person getOnePerson() {
+        LOG.info("Testing logger");
+        return new Person("Hans", 55, "Hans@hotmail.com" );
     }
+
 
     @GetMapping(path = "/persons")
-    public List<Person> getAllPersons() {
-        return personService.getAllPersons();
+    public List<Person> getPersons() {
+
+        List<Person> persons = new ArrayList<Person>();
+        persons.add(new Person("Tor", 78, "tor@gmail.com"));
+        persons.add(new Person("Abdui", 88, "abdui@gmail.com"));
+        persons.add(new Person("Silka", 8, "silka@gmail.com"));
+        persons.add(new Person("TorArne", 58, "torarne@gmail.com"));
+
+        return persons;
     }
 
     @GetMapping("/persons/{id}")
@@ -67,11 +76,6 @@ public class Controller {
         return person.getId();
     }
 
-  /*  @PostMapping(path = "/prs", consumes = "application/json", produces = "application/json")
-    public void addMember(@RequestBody Person prs) {
-        meterRegistry.counter("prscount2", "name", prs.getName()).increment();
-        meterRegistry.counter("prscount3", "email", prs.getEmail()).increment();
-        meterRegistry.gauge("prscount4", 3);
-    } */
+
 }
 
