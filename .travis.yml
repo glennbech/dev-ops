@@ -10,9 +10,6 @@ env:
 install: true
 language: java
 before_install:
-- openssl aes-256-cbc -K $encrypted_32f589868c05_key -iv $encrypted_32f589868c05_iv
-  -in devops-gcp-project-296222-41ee350b7bd5.json.enc -out devops-gcp-project-296222-41ee350b7bd5.json
-  -d
 - openssl aes-256-cbc -K $encrypted_92de4acbdbc9_key -iv $encrypted_92de4acbdbc9_iv
   -in devops-gcp-project-296222-41ee350b7bd5.json.enc -out devops-gcp-project-296222-41ee350b7bd5.json
   -d
